@@ -1,0 +1,328 @@
+{
+"activaciones": [
+{
+"f": "activaciones-01.jpg",
+"w": 1045,
+"h": 1400
+},
+{
+"f": "activaciones-02.jpg",
+"w": 1045,
+"h": 1400
+},
+{
+"f": "activaciones-03.jpg",
+"w": 1045,
+"h": 1400
+},
+{
+"f": "activaciones-04.jpg",
+"w": 1254,
+"h": 709
+},
+{
+"f": "activaciones-05.jpg",
+"w": 1254,
+"h": 945
+},
+{
+"f": "activaciones-06.jpg",
+"w": 1045,
+"h": 1400
+},
+{
+"f": "activaciones-07.jpg",
+"w": 1045,
+"h": 1400
+},
+{
+"f": "activaciones-08.jpg",
+"w": 1107,
+"h": 534
+}
+],
+"camiones": [
+{
+"f": "camiones-01.jpg",
+"w": 1045,
+"h": 1400
+},
+{
+"f": "camiones-02.jpg",
+"w": 914,
+"h": 1400
+},
+{
+"f": "camiones-03.jpg",
+"w": 787,
+"h": 1400
+},
+{
+"f": "camiones-04.jpg",
+"w": 1045,
+"h": 1400
+},
+{
+"f": "camiones-05.jpg",
+"w": 1254,
+"h": 540
+},
+{
+"f": "camiones-06.jpg",
+"w": 1254,
+"h": 540
+},
+{
+"f": "camiones-07.jpg",
+"w": 1104,
+"h": 540
+}
+],
+"pantallas": [
+{
+"f": "pantallas-01.jpg",
+"w": 1254,
+"h": 841
+},
+{
+"f": "pantallas-02.jpg",
+"w": 1254,
+"h": 841
+},
+{
+"f": "pantallas-03.jpg",
+"w": 879,
+"h": 1400
+},
+{
+"f": "pantallas-04.jpg",
+"w": 1115,
+"h": 1400
+},
+{
+"f": "pantallas-05.jpg",
+"w": 879,
+"h": 1400
+},
+{
+"f": "pantallas-06.jpg",
+"w": 1254,
+"h": 707
+},
+{
+"f": "pantallas-07.jpg",
+"w": 1254,
+"h": 707
+},
+{
+"f": "pantallas-08.jpg",
+"w": 1254,
+"h": 711
+},
+{
+"f": "pantallas-09.jpg",
+"w": 1254,
+"h": 689
+}
+],
+"pantallas-renta": [
+{
+"f": "pantallas-renta-01.jpg",
+"w": 1113,
+"h": 1400
+},
+{
+"f": "pantallas-renta-02.jpg",
+"w": 1254,
+"h": 945
+},
+{
+"f": "pantallas-renta-03.jpg",
+"w": 782,
+"h": 1400
+},
+{
+"f": "pantallas-renta-04.jpg",
+"w": 1254,
+"h": 709
+},
+{
+"f": "pantallas-renta-05.jpg",
+"w": 540,
+"h": 954
+},
+{
+"f": "pantallas-renta-06.jpg",
+"w": 540,
+"h": 954
+}
+],
+"perimetro": [
+{
+"f": "perimetro-01.jpg",
+"w": 820,
+"h": 1400
+},
+{
+"f": "perimetro-02.jpg",
+"w": 879,
+"h": 1400
+},
+{
+"f": "perimetro-03.jpg",
+"w": 534,
+"h": 960
+},
+{
+"f": "perimetro-04.jpg",
+"w": 534,
+"h": 960
+}
+],
+"stands": [
+{
+"f": "stands-01.jpg",
+"w": 1254,
+"h": 709
+},
+{
+"f": "stands-02.jpg",
+"w": 1045,
+"h": 1400
+},
+{
+"f": "stands-03.jpg",
+"w": 1254,
+"h": 945
+},
+{
+"f": "stands-04.jpg",
+"w": 1045,
+"h": 1400
+},
+{
+"f": "stands-05.jpg",
+"w": 1045,
+"h": 1400
+},
+{
+"f": "stands-06.jpg",
+"w": 1045,
+"h": 1400
+},
+{
+"f": "stands-07.jpg",
+"w": 1045,
+"h": 1400
+},
+{
+"f": "stands-08.jpg",
+"w": 1045,
+"h": 1400
+},
+{
+"f": "stands-09.jpg",
+"w": 1045,
+"h": 1400
+}
+],
+"totems": [
+{
+"f": "totems-01.jpg",
+"w": 1045,
+"h": 1400
+},
+{
+"f": "totems-02.jpg",
+"w": 879,
+"h": 1400
+},
+{
+"f": "totems-03.jpg",
+"w": 787,
+"h": 1400
+},
+{
+"f": "totems-04.jpg",
+"w": 914,
+"h": 1400
+},
+{
+"f": "totems-05.jpg",
+"w": 1045,
+"h": 1400
+},
+{
+"f": "totems-06.jpg",
+"w": 1045,
+"h": 1400
+},
+{
+"f": "totems-07.jpg",
+"w": 1254,
+"h": 749
+},
+{
+"f": "totems-08.jpg",
+"w": 540,
+"h": 954
+},
+{
+"f": "totems-09.jpg",
+"w": 540,
+"h": 954
+}
+],
+"vallas": [
+{
+"f": "vallas-01.jpg",
+"w": 1254,
+"h": 841
+},
+{
+"f": "vallas-02.jpg",
+"w": 1254,
+"h": 841
+},
+{
+"f": "vallas-03.jpg",
+"w": 1254,
+"h": 841
+},
+{
+"f": "vallas-04.jpg",
+"w": 1254,
+"h": 841
+},
+{
+"f": "vallas-05.jpg",
+"w": 1254,
+"h": 841
+},
+{
+"f": "vallas-06.jpg",
+"w": 1254,
+"h": 841
+},
+{
+"f": "vallas-07.jpg",
+"w": 1254,
+"h": 841
+},
+{
+"f": "vallas-08.jpg",
+"w": 1254,
+"h": 841
+},
+{
+"f": "vallas-09.jpg",
+"w": 1254,
+"h": 841
+},
+{
+"f": "vallas-10.jpg",
+"w": 1254,
+"h": 841
+}
+]
+}
