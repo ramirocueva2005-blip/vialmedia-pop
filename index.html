@@ -310,7 +310,7 @@ const MIN=1;      // se puede elegir desde 1 para ver precios
 const PEDIDO_MIN=5; // pedido mínimo real por producto (solo se avisa en Mi cotización)
 const money=v=>"$"+v.toFixed(2).replace(".",",");
 /* precio que se ve: total de la cantidad elegida (1 u. = precio unitario) */
-const precio=(p,q)=>{q=Math.max(MIN,parseInt(q)||MIN);return q>1?`${money(p.p*q)} <small>+ IVA · ${q} × ${money(p.p)}</small>`:`${money(p.p)} <small>+ IVA</small>`};
+const precio=(p,q)=>{q=Math.max(MIN,parseInt(q)||MIN);return `${money(p.p*q)} <small>+ IVA</small>`};
 const pintar=(id,q)=>{const e=document.getElementById("pr"+id);if(e)e.innerHTML=precio(byId(id),q)};
 const pintarFicha=q=>{const k=location.hash.match(/^#p-(\d+)$/);const f=document.getElementById("fpr");if(k&&f)f.innerHTML=precio(byId(k[1]),q)};
 const $=s=>document.querySelector(s);
