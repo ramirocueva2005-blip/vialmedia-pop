@@ -3,7 +3,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Vialmedia POP · Regalos corporativos a precio de mayorista</title>
-<meta name="description" content="Kits, termos, cuadernos y esferos con el logo de tu empresa a precio de mayorista. Desde 5 unidades, entrega en 1 día.">
+<meta name="description" content="Kits, termos, cuadernos y esferos con el logo de tu empresa a precio de mayorista. Entrega en 1 día.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vialmedia POP">
+<meta property="og:title" content="Vialmedia POP · Regalos corporativos con tu logo">
+<meta property="og:description" content="Kits, termos, cuadernos y esferos a precio de mayorista. Arma tu cotización en un minuto.">
+<meta property="og:url" content="https://ramirocueva2005-blip.github.io/vialmedia-pop/">
+<meta property="og:image" content="https://ramirocueva2005-blip.github.io/vialmedia-pop/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Great+Vibes&display=swap">
 <style>
@@ -75,6 +84,7 @@ header.top .badge{background:var(--accent);color:var(--accent-ink)}
 .price{align-self:flex-start;background:var(--tag);color:#fff;border:1px solid var(--gold);outline:1px solid var(--gold);outline-offset:3px;border-radius:2px;padding:7px 14px;margin:6px 4px 4px;font-weight:700;font-size:16px;font-variant-numeric:tabular-nums}
 .price small{font-weight:500;font-size:11px;opacity:.8}
 .add{display:flex;gap:8px;align-items:center;margin-top:6px}
+.minu{color:#B45309;font-size:12px;font-weight:600;margin-top:2px}
 .qty{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
 .qty button{border:0;background:var(--soft);width:34px;min-height:40px;cursor:pointer;font-size:16px}
 .qty input{width:52px;border:0;text-align:center;background:var(--surface);font-variant-numeric:tabular-nums}
@@ -212,7 +222,7 @@ footer{border-top:2px solid var(--gold);padding:24px 0 40px;color:var(--muted);f
   <button class="btn cartbtn" id="open" aria-haspopup="dialog">Mi cotización <span class="badge" id="cnt">0</span></button>
 </div></header>
 
-<div class="strip">🏷️ <b>Precios de mayorista</b> · Desde 5 unidades · Entrega en 1 día · Con el logo de tu empresa</div>
+<div class="strip">🏷️ <b>Precios de mayorista</b> · Entrega en 1 día · Con el logo de tu empresa</div>
 <main class="wrap">
   <section class="hero">
     <div class="panel">
@@ -221,12 +231,12 @@ footer{border-top:2px solid var(--gold);padding:24px 0 40px;color:var(--muted);f
       <span class="script">Navideño</span>
       <h1>Precios de Mayorista</h1>
       <span class="year">2026</span>
-      <p>Regalos corporativos con el logo de tu empresa, directo del mayorista. Sin intermediarios: desde 5 unidades y entrega en 1 día. Arma tu lista y pide tu cotización por WhatsApp.</p>
+      <p>Regalos corporativos con el logo de tu empresa, directo del mayorista. Sin intermediarios y con entrega en 1 día. Arma tu lista y pide tu cotización por WhatsApp.</p>
       <div class="cta">
         <a class="btn primary" href="#catalogo" style="text-decoration:none;display:inline-flex;align-items:center">Ver catálogo</a>
         <button class="btn" id="open2">Mi cotización</button>
       </div>
-      <div class="facts"><span><b>Precio mayorista</b></span><span><b>176</b> productos</span><span>Desde <b>5</b> unidades</span><span>Entrega en <b>1 día</b></span></div>
+      <div class="facts"><span><b>Precio mayorista</b></span><span><b>176</b> productos</span><span>Entrega en <b>1 día</b></span></div>
     </div>
   </section>
 
@@ -251,7 +261,7 @@ footer{border-top:2px solid var(--gold);padding:24px 0 40px;color:var(--muted);f
 
   <footer>
     <div><b style="color:var(--ink)">Vialmedia POP</b> · Mayorista de regalos corporativos · Catálogo Navidad 2026</div>
-    <div>Precios de mayorista por unidad, más IVA. Pedido mínimo: 5 unidades por producto. Entrega en 1 día. La personalización con logo se confirma en la cotización.</div>
+    <div>Precios de mayorista por unidad, más IVA. Entrega en 1 día. La personalización con logo se confirma en la cotización.</div>
   </footer>
 </main>
 
@@ -296,8 +306,13 @@ const PRODUCTS=[{"id": 0, "n": "Kit Executive", "c": "Kits", "d": "Cuaderno ejec
 const WA_NUMBER="593982898560"; // Vialmedia ventas (098 289 8560)
 const WA_SHOW="098 289 8560";
 const IVA=0.15;
-const MIN=5;
+const MIN=1;      // se puede elegir desde 1 para ver precios
+const PEDIDO_MIN=5; // pedido mínimo real por producto (solo se avisa en Mi cotización)
 const money=v=>"$"+v.toFixed(2).replace(".",",");
+/* precio que se ve: total de la cantidad elegida (1 u. = precio unitario) */
+const precio=(p,q)=>{q=Math.max(MIN,parseInt(q)||MIN);return q>1?`${money(p.p*q)} <small>+ IVA · ${q} × ${money(p.p)}</small>`:`${money(p.p)} <small>+ IVA</small>`};
+const pintar=(id,q)=>{const e=document.getElementById("pr"+id);if(e)e.innerHTML=precio(byId(id),q)};
+const pintarFicha=q=>{const k=location.hash.match(/^#p-(\d+)$/);const f=document.getElementById("fpr");if(k&&f)f.innerHTML=precio(byId(k[1]),q)};
 const $=s=>document.querySelector(s);
 let cat="Todos",query="",sort="cat",cart={};
 try{cart=JSON.parse(localStorage.getItem("vpop-cart")||"{}")}catch(e){}
@@ -332,9 +347,9 @@ function renderGrid(){
       <div class="cat">${p.c}</div>
       <h3><a href="#p-${p.id}">${p.n}</a></h3>
       <div class="d">${p.d}</div>
-      <div class="pm">Precio mayorista</div><div class="price">${money(p.p)} <small>+ IVA</small></div>
+      <div class="price" id="pr${p.id}">${precio(p,cart[p.id]||MIN)}</div>
       <div class="add">
-        <div class="qty"><button type="button" data-step="-1" data-id="${p.id}" aria-label="Menos">−</button><input id="q${p.id}" type="number" min="5" value="${cart[p.id]||MIN}" aria-label="Cantidad de ${p.n}"><button type="button" data-step="1" data-id="${p.id}" aria-label="Más">+</button></div>
+        <div class="qty"><button type="button" data-step="-1" data-id="${p.id}" aria-label="Menos">−</button><input id="q${p.id}" type="number" min="1" value="${cart[p.id]||MIN}" aria-label="Cantidad de ${p.n}"><button type="button" data-step="1" data-id="${p.id}" aria-label="Más">+</button></div>
         <button class="btn primary" data-add="${p.id}">${cart[p.id]?"Actualizar":"Cotizar"}</button>
       </div>
     </div>
@@ -348,10 +363,10 @@ function renderCart(){
   const t=totals();$("#cnt").textContent=t.n;
   const ids=Object.keys(cart);
   $("#lines").innerHTML=ids.length?ids.map(id=>{const p=byId(id);return`
-  <div class="line"><img src="${p.img}" alt=""><div class="nm">${p.n}<div class="sub">${cart[id]} × ${money(p.p)} = ${money(cart[id]*p.p)}</div><button class="rm" data-rm="${id}">Quitar</button></div>
-  <div class="qty"><button type="button" data-cstep="-1" data-id="${id}" aria-label="Menos">−</button><input type="number" min="5" value="${cart[id]}" data-cq="${id}" aria-label="Cantidad de ${p.n}"><button type="button" data-cstep="1" data-id="${id}" aria-label="Más">+</button></div></div>`}).join(""):`<p class="empty">Aún no agregas productos. Elige del catálogo y pulsa Cotizar.</p>`;
+  <div class="line"><img src="${p.img}" alt=""><div class="nm">${p.n}<div class="sub">${cart[id]} × ${money(p.p)} = ${money(cart[id]*p.p)}</div>${cart[id]<PEDIDO_MIN?`<div class="minu">Mínimo ${PEDIDO_MIN} unidades</div>`:""}<button class="rm" data-rm="${id}">Quitar</button></div>
+  <div class="qty"><button type="button" data-cstep="-1" data-id="${id}" aria-label="Menos">−</button><input type="number" min="1" value="${cart[id]}" data-cq="${id}" aria-label="Cantidad de ${p.n}"><button type="button" data-cstep="1" data-id="${id}" aria-label="Más">+</button></div></div>`}).join(""):`<p class="empty">Aún no agregas productos. Elige del catálogo y pulsa Cotizar.</p>`;
   $("#tot").innerHTML=ids.length?`<div><span>Subtotal</span><span>${money(t.sub)}</span></div><div><span>IVA ${Math.round(IVA*100)}%</span><span>${money(t.iva)}</span></div><div class="g"><span>Total referencial</span><span>${money(t.tot)}</span></div>`:"";
-  $("#ivanote").textContent=ids.length?"Valor referencial. Pedido mínimo 5 unidades por producto; entrega en 1 día. No incluye envío fuera de Loja. El valor final se confirma en la cotización.":"";
+  $("#ivanote").textContent=ids.length?(ids.some(id=>cart[id]<PEDIDO_MIN)?`Pedido mínimo: ${PEDIDO_MIN} unidades por producto. `:"")+"Valor referencial. Entrega en 1 día. No incluye envío fuera de Loja.":"";
   $("#f").hidden=!ids.length;
 }
 function setQty(id,v){v=Math.max(MIN,parseInt(v)||MIN);cart[id]=v;save();renderCart();renderGrid()}
@@ -374,12 +389,13 @@ function close(){$("#layer").hidden=true}
 document.addEventListener("click",e=>{
   const t=e.target.closest("button");if(!t)return;
   if(t.dataset.c){cat=t.dataset.c;renderTabs();renderGrid()}
-  if(t.dataset.step){const i=$("#q"+t.dataset.id);i.value=Math.max(MIN,(parseInt(i.value)||MIN)+parseInt(t.dataset.step))}
+  if(t.dataset.step){const i=$("#q"+t.dataset.id);i.value=Math.max(MIN,(parseInt(i.value)||MIN)+parseInt(t.dataset.step));pintar(t.dataset.id,i.value)}
   if(t.dataset.add){setQty(t.dataset.add,$("#q"+t.dataset.add).value);toast("Agregado a tu cotización")}
   if(t.dataset.cstep){setQty(t.dataset.id,(cart[t.dataset.id]||MIN)+parseInt(t.dataset.cstep))}
   if(t.dataset.rm){delete cart[t.dataset.rm];save();renderCart();renderGrid()}
 });
 document.addEventListener("change",e=>{if(e.target.dataset.cq)setQty(e.target.dataset.cq,e.target.value)});
+document.addEventListener("input",e=>{const m=(e.target.id||"").match(/^q(\d+)$/);if(m)pintar(m[1],e.target.value);if(e.target.id==="fq")pintarFicha(e.target.value)});
 $("#q").addEventListener("input",e=>{query=e.target.value;renderGrid()});
 $("#sort").addEventListener("change",e=>{sort=e.target.value;renderGrid()});
 $("#open").onclick=open;$("#open2").onclick=open;$("#close").onclick=close;$("#scrim").onclick=close;
@@ -420,9 +436,9 @@ function renderFicha(){
       <div class="fimg" id="fimg"><img class="bg" src="${p.img}" alt="" aria-hidden="true"><img src="${p.img}" alt="${p.n}"><div class="lgbox" id="lgbox" hidden><img class="lg" id="lg" alt="Tu logo" draggable="false"><button type="button" class="lgh lgx" id="lgx" aria-label="Quitar logo" title="Quitar logo">✕</button><span class="lgh lgr" id="lgr" title="Girar">↻</span></div></div>
       <div class="finfo">
         <div class="cat">${p.c}</div><h1>${p.n}</h1><p class="d">${p.d}</p>
-        <div class="pm">Precio mayorista</div><div class="price">${money(p.p)} <small>+ IVA c/u</small></div>
+        <div class="price" id="fpr">${precio(p,cart[p.id]||MIN)}</div>
         <div class="add">
-          <div class="qty"><button type="button" data-fstep="-1" aria-label="Menos">−</button><input id="fq" type="number" min="5" value="${cart[p.id]||MIN}" aria-label="Cantidad de ${p.n}"><button type="button" data-fstep="1" aria-label="Más">+</button></div>
+          <div class="qty"><button type="button" data-fstep="-1" aria-label="Menos">−</button><input id="fq" type="number" min="1" value="${cart[p.id]||MIN}" aria-label="Cantidad de ${p.n}"><button type="button" data-fstep="1" aria-label="Más">+</button></div>
           <button class="btn primary" data-fadd="${p.id}">${cart[p.id]?"Actualizar cotización":"Agregar a mi cotización"}</button>
         </div>
         <div class="trylogo">
@@ -434,7 +450,7 @@ function renderFicha(){
             <div class="tl-k">Arrastra el logo para moverlo. Usa ↻ para girarlo y ✕ para quitarlo.</div>
           </div>
         </div>
-        <ul class="fpts"><li>Con el logo de tu empresa</li><li>Precio de mayorista, sin intermediarios</li><li>Pedido mínimo: ${MIN} unidades</li><li>Entrega en 1 día</li><li>Cotización sin compromiso por WhatsApp</li></ul>
+        <ul class="fpts"><li>Con el logo de tu empresa</li><li>Precio de mayorista, sin intermediarios</li><li>Entrega en 1 día</li><li>Cotización sin compromiso por WhatsApp</li></ul>
       </div>
     </div>
     ${rel.length?`<div class="frel"><h2>Más en ${p.c}</h2><div class="grid">${rel.map(cardHTML).join("")}</div></div>`:""}
@@ -444,7 +460,7 @@ function renderFicha(){
 window.addEventListener("hashchange",renderFicha);
 document.addEventListener("click",e=>{
   if(e.target.closest("[data-open]")){const o=$("#open");if(o)o.click();return}
-  const s=e.target.closest("[data-fstep]");if(s){const i=$("#fq");i.value=Math.max(MIN,(parseInt(i.value)||MIN)+parseInt(s.dataset.fstep));return}
+  const s=e.target.closest("[data-fstep]");if(s){const i=$("#fq");i.value=Math.max(MIN,(parseInt(i.value)||MIN)+parseInt(s.dataset.fstep));pintarFicha(i.value);return}
   const a=e.target.closest("[data-fadd]");if(a){setQty(a.dataset.fadd,$("#fq").value);toast("Agregado a tu cotización");renderFicha()}
 });
 function renderTop(){const g=$("#topgrid");if(g)g.innerHTML=PRODUCTS.filter(p=>p.top).sort((a,b)=>a.top-b.top).map(cardHTML).join("")}
