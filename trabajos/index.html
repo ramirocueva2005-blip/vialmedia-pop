@@ -48,6 +48,7 @@ section .sub{color:var(--muted);margin:8px 0 18px;max-width:70ch;font-size:16px;
 .grid{columns:3 280px;column-gap:12px}
 .grid button{display:block;width:100%;margin:0 0 12px;padding:0;border:0;background:var(--panel);border-radius:12px;overflow:hidden;cursor:zoom-in;break-inside:avoid}
 .grid img{display:block;width:100%;height:auto}
+.grid.g1{columns:1}
 .mini{display:inline-flex;align-items:center;gap:8px;margin-top:6px;color:var(--yel);font-weight:700;text-decoration:none}
 footer{padding:34px 0 120px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
 .wafab{position:fixed;right:16px;bottom:16px;z-index:30;display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;border-radius:999px;padding:13px 18px;font-weight:800;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.35)}
@@ -63,7 +64,7 @@ footer{padding:34px 0 120px;border-top:1px solid var(--line);color:var(--muted);
 <header><div class="wrap">
   <img src="img/logo.png" alt="Vialmedia, publicidad en vallas y pantallas LED" width="900" height="164">
   <nav aria-label="Secciones">
-    <a href="#stands">Stands</a><a href="#totems">Tótems LED</a><a href="#pantallas">Pantallas LED</a><a href="#camiones">Camiones LED</a><a href="#activaciones">Activaciones</a><a href="#vallas">Vallas</a>
+    <a href="#stands">Stands</a><a href="#disenos">Diseños</a><a href="#totems">Tótems LED</a><a href="#pantallas">Pantallas LED</a><a href="#camiones">Camiones LED</a><a href="#activaciones">Activaciones</a><a href="#vallas">Vallas</a>
   </nav>
 </div></header>
 
@@ -79,6 +80,10 @@ footer{padding:34px 0 120px;border-top:1px solid var(--line);color:var(--muted);
     <p class="sub">Stand para la UTPL con pantalla LED de gran formato, counter, mobiliario y montaje completo. Lo armamos a la medida de tu espacio y de tu marca.</p>
     <ul class="puntos"><li>Diseño a medida</li><li>Pantalla LED</li><li>Sonido e iluminación</li><li>Counter y mobiliario</li><li>Montaje y desmontaje</li><li>Todo Ecuador</li></ul>
     <div class="grid" data-g="stands"></div></section>
+
+  <section id="disenos"><h2>Diseños de ejemplo para tu marca <small>Propuestas</small></h2>
+    <p class="sub">Así podría verse tu stand. Son diseños de referencia (renders) con el mismo sistema modular que usamos en nuestros trabajos: lo adaptamos a tus medidas, tus colores y tu feria.</p>
+    <div class="grid g1" data-g="renders"></div></section>
 
   <section id="totems"><h2>Tótems LED <small>También táctiles</small></h2>
     <p class="sub">Tótems portátiles de 2,10 m que llaman la atención en cualquier lugar, y tótem táctil tipo iPad gigante para catálogos, juegos, encuestas y registro de visitantes.</p>
