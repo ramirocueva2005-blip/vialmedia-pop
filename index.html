@@ -2,12 +2,12 @@
 <html lang="es">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Vialmedia · Regalos corporativos a precio de mayorista</title>
-<meta name="description" content="Kits, termos, cuadernos y esferos con el logo de tu empresa a precio de mayorista. Entrega en 1 día.">
+<title>Vialmedia · Agencia de publicidad · Regalos corporativos con tu logo</title>
+<meta name="description" content="Vialmedia, agencia de publicidad: regalos corporativos con tu logo, stands para ferias y pantallas LED. Desde 12 kits, muestra digital y envíos a todo Ecuador.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vialmedia">
-<meta property="og:title" content="Vialmedia · Regalos corporativos con tu logo">
-<meta property="og:description" content="Kits, termos, cuadernos y esferos a precio de mayorista. Arma tu cotización en un minuto.">
+<meta property="og:title" content="Vialmedia · Agencia de publicidad · Regalos corporativos con tu logo">
+<meta property="og:description" content="Kits, termos y libretas con el logo de tu empresa. Desde 12 kits, muestra digital y envíos a todo Ecuador. Cotiza por WhatsApp.">
 <meta property="og:url" content="https://ramirocueva2005-blip.github.io/vialmedia-pop/">
 <meta property="og:image" content="https://ramirocueva2005-blip.github.io/vialmedia-pop/img/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -116,7 +116,7 @@ form textarea{min-height:70px;resize:vertical}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;z-index:80;font-size:14px}
 
 footer{border-top:2px solid var(--gold);padding:24px 0 40px;color:var(--muted);font-size:13px;display:grid;gap:6px}
-@media (max-width:480px){.brand .logo{height:30px}.cartbtn{padding:8px 10px}}
+@media (max-width:480px){.brand .logo{height:30px}.cartbtn{padding:8px 10px}header.top .wahead{padding:8px 10px}.wahead span{display:none}}
 @media (max-width:760px){
   .hero{min-height:0}.hero .panel{margin:14px;padding:22px 18px;justify-self:stretch}
   .row2{grid-template-columns:1fr}
@@ -208,6 +208,9 @@ footer{border-top:2px solid var(--gold);padding:24px 0 40px;color:var(--muted);f
 .intro p{margin:6px 0 0;color:var(--muted);font-size:15px}
 .wafab{position:fixed;right:16px;bottom:16px;z-index:30;display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;border-radius:999px;padding:12px 16px;font-weight:700;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.25)}
 .wafab svg{width:22px;height:22px}
+/* 22-nov: WhatsApp arriba, visible a primera vista (la web es el único link de la bio de IG) */
+header.top .wahead{display:inline-flex;align-items:center;gap:8px;background:#25D366;border-color:#25D366;color:#fff;font-weight:700;text-decoration:none}
+.wahead svg{width:20px;height:20px}
 .cbar{position:fixed;left:0;right:0;bottom:0;z-index:31;background:var(--surface);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:12px;box-shadow:0 -6px 20px rgba(0,0,0,.15)}
 .cbar .ct{flex:1;font-size:14px;line-height:1.25}.cbar .ct b{font-size:17px}
 .cbar[hidden]{display:none}
@@ -236,6 +239,7 @@ body.concarro main{padding-bottom:72px}
   <div class="brand"><img class="logo" src="img/logo-vialmedia-2026.png" alt="Vialmedia, agencia de publicidad" width="900" height="154"></div>
   <div class="sp"></div>
   <a class="btn hstands" href="trabajos/">Stands y LED</a>
+  <a class="btn wahead" id="wahead" href="https://wa.me/593982898560" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.4.7 4.7 1.9 6.7L3 29l6.9-2.1c1.9 1 4 1.6 6.1 1.6 7 0 12.7-5.6 12.7-12.6S23 3 16 3zm0 23.1c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.2 1.2-4-.3-.4a10.4 10.4 0 0 1-1.6-5.6C5.4 9.8 10.2 5.1 16 5.1s10.6 4.7 10.6 10.5S21.8 26.1 16 26.1z"/></svg><span>WhatsApp</span></a>
   <button class="btn cartbtn" id="open" aria-haspopup="dialog">Mi cotización <span class="badge" id="cnt">0</span></button>
 </div></header>
 
